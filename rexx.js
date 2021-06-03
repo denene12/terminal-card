@@ -16,12 +16,49 @@ clear();
 
 const prompt = inquirer.createPromptModule();
 
+const questions2 = [
+    {
+        type: "list",
+        name: "action",
+        message: "Which app?",
+        choices: [
+            {
+                name: `With ${chalk.green.bold("Session")}! (I prefer this option)`,
+                value: () => {
+		            open("https://getsession.org/download/");
+                    console.log("Here! My Session Code. 058375700732546ee597d7937b8f9d2721b810d15978c800a91cd66532b31f2b1a");
+		            console.log("You can download Session right there!!")
+                }
+            },
+            {
+                name: `With ${chalk.green.bold("Telegram")}!`,
+                value: () => {
+                    open("https://t.me/rexulec");
+                    console.log("\nYeyy! I'll wait your messageee.. :)\n");
+                }
+            },
+            {
+                name: "Just quit.",
+                value: () => {
+                    console.log("Bye. See ya later!\n");
+                }
+            }
+        ]
+    }
+];
+
 const questions = [
     {
         type: "list",
         name: "action",
         message: "What you want to do?",
         choices: [
+            {
+                name: `Contact ${chalk.green.bold("me")}!`,
+                value: () => {
+                    prompt(questions2).then(answer => answer.action());
+                }
+            },
             {
                 name: `Send me an ${chalk.green.bold("email")}?`,
                 value: () => {
