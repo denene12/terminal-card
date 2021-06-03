@@ -23,7 +23,7 @@ const questions = [
             {
                 name: `Send me an ${chalk.green.bold("email")}?`,
                 value: () => {
-                    open("mailto:hi@anmolsingh.me");
+                    open("mailto:rexulec@gmail.com");
                     console.log("\nYeyy! I'll wait your mail :)\n");
                 }
             },
@@ -38,46 +38,42 @@ const questions = [
 ];
 
 const data = {
-    name: chalk.bold.green("             Anmol Pratap Singh"),
+    name: chalk.bold.green("                   Mert Dogu"),
     handle: chalk.white("@rexulec"),
-    work: `${chalk.white("Freelance	")}
 
-    twitter: chalk.gray("https://twitter.com/") + chalk.cyan("misteranmol"),
-    github: chalk.gray("https://github.com/") + chalk.green("anmol098"),
-    linkedin: chalk.gray("https://linkedin.com/in/") + chalk.blue("anmol098"),
+    twitter: chalk.gray("https://twitter.com/") + chalk.cyan("rexulec"),
+    github: chalk.gray("https://github.com/") + chalk.green("rexulec"),
+    instagram: chalk.gray("https://instagram.com/") + chalk.blue("itjustmert"),
     web: chalk.cyan("http://rexulec.com"),
     npx: chalk.red("npx") + " " + chalk.white("rexulec"),
 
-    labelWork: chalk.white.bold("       Work:"),
     labelTwitter: chalk.white.bold("    Twitter:"),
     labelGitHub: chalk.white.bold("     GitHub:"),
-    labelLinkedIn: chalk.white.bold("   LinkedIn:"),
+    labelInstagram: chalk.white.bold("  Instagram:"),
     labelWeb: chalk.white.bold("        Web:"),
     labelCard: chalk.white.bold("       Card:")
 };
 
 const me = boxen(
     [
-        `${data.name}`,
-        ``,
-        `${data.labelWork}  ${data.work}`,
+        `${data.name} / ${data.handle}`,
         ``,
         `${data.labelTwitter}  ${data.twitter}`,
         `${data.labelGitHub}  ${data.github}`,
-        `${data.labelLinkedIn}  ${data.linkedin}`,
+        `${data.labelInstagram}  ${data.instagram}`,
         `${data.labelWeb}  ${data.web}`,
         ``,
         `${data.labelCard}  ${data.npx}`,
         ``,
         `${chalk.italic(
-            "I am currently looking for new opportunities,"
+            "Hi, My name is Mert. I am a young developer from Turkey."
         )}`,
-        `${chalk.italic("my inbox is always open. Whether you have a")}`,
+        `${chalk.italic("I am student, developer and designer. I try to code python")}`,
         `${chalk.italic(
-            "question or just want to say hi, I will try "
+            "apps in my free time. I have been using Adobe Photoshop,"
         )}`,
         `${chalk.italic(
-            "my best to get back to you!"
+            "After Effect and Illustrator for 3 years."
         )}`
     ].join("\n"),
     {
@@ -90,12 +86,5 @@ const me = boxen(
 );
 
 console.log(me);
-const tip = [
-    `Tip: Try ${chalk.cyanBright.bold(
-        "cmd/ctrl + click"
-    )} on the links above`,
-    '',
-].join("\n");
-console.log(tip);
 
 prompt(questions).then(answer => answer.action());
